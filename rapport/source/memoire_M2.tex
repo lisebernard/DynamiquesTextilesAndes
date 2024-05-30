@@ -1,0 +1,428 @@
+\documentclass[a4paper, twoside]{book}
+
+\usepackage[spanish, english, french]{babel} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{times}
+
+%Configuration de la mise en page
+%Menus des annexes
+\usepackage{appendix}
+
+%Gestion des images
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\addto\captionsfrench{\def\figurename{Image}}
+\addto\captionsfrench{\def\tablename{Tableau}}
+
+%Modifier taille légende des images
+\usepackage[font=small]{caption}
+
+%Note de bas de page
+\counterwithout*{footnote}{chapter}
+
+% Éléments de mise en page (marge de 2,5 cm, alinéa en début de paragraphe 1cm, interligne 1,5)
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{1cm}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+%Colonnes
+\usepackage{paracol}
+
+%%barrer du texte
+\usepackage{soul}
+
+%TABLEAU
+\usepackage{longtable}
+%pour mode paysage
+\usepackage{lscape}
+%Pour paysage dans le pdf
+\usepackage{pdflscape}
+%Utiliser couleurs dans un tableau
+\usepackage{colortbl}
+%gestion avancée des couleurs. On met nom de la couleur puis pourcentage
+\usepackage{xcolor}
+%Séparer une cellule en 2
+\usepackage{diagbox}
+
+\usepackage{epigraph}
+
+%Pour avoir liens dans document (externes ou internes)
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Lise Bernard},pdftitle={memoire_M2}, pdfborder=0 0 0}
+
+%après hyperref : le paquet de glossaire PAS FONCTIONNEL
+%\usepackage[automake,toc]{glossaries}
+%\makeglossaries
+
+%\newglossaryentry{broderie}{name=Broderie, description={technique d'ornementation qui consiste à ajouter à la surface d'un support un décor généralement exécuté à l'aiguille avec des fils et divers éléments.}}
+
+
+%% Commande écriture inclusive
+\newcommand{\inclusive}[1]{$\cdot${#1}}
+\newcommand{\inclusives}[1]{$\cdot${#1}$\cdot${s}}
+
+%commande siècle
+\newcommand{\siecle}[1]{\textsc{#1}\textsuperscript{e} siècle}
+
+%Commande pour vider le titre courant et pagination des pages vides (l'insérer sur page que l'on veut vider)
+\newcommand{\clearemptydoublepage}{
+	\newpage{\pagestyle{empty}\cleardoublepage}}
+	
+%Commande pour les citations de + de 3 lignes
+\newenvironment{citer}{\quote\singlespacing\small\vspace{-6pt}}
+{\endquote\doublespacing}
+
+% Listes
+\usepackage{enumerate}
+\usepackage{enumitem}
+
+%%Bibliographie
+%TeXShop → Réglages → Éditeur → Complétions de BibDesk
+% Pour avoir guillemets français dans biblio
+\usepackage[babel]{csquotes} 
+%paquet gestion biblio
+\usepackage[backend=biber, isbn=false, doi=false, url=false]{biblatex-chicago}
+
+
+\addbibresource{../bib/TextAndes.bib}
+\addbibresource{../bib/ArchAnd.bib}
+\addbibresource{../bib/projetText.bib}
+\addbibresource{../bib/classificationTextile.bib}
+\addbibresource{../bib/TextDigital.bib}
+\addbibresource{../bib/SIG.bib}
+\addbibresource{../bib/IDandine.bib}
+\addbibresource{../bib/computervision.bib}
+
+\DeclareSourcemap{
+	\maps[datatype=bibtex]{
+		\map[overwrite]{
+			\perdatasource{../bib/TextAndes.bib}
+			\step[fieldset=keywords, fieldvalue={,TextAnd}, append]
+		}
+	 \map[overwrite]{
+			\perdatasource{../bib/ArchAnd.bib}
+			\step[fieldset=keywords, fieldvalue={ArchAnd,}, append]
+		}
+        \map[overwrite]{
+			\perdatasource{../bib/projetText.bib}
+			\step[fieldset=keywords, fieldvalue={,projetText}, append]
+		}
+	\map[overwrite]{
+			\perdatasource{../bib/classificationTextile.bib}
+			\step[fieldset=keywords, fieldvalue={,classificationTextile}, append]
+		}
+	\map[overwrite]{
+			\perdatasource{../bib/TextDigital.bib}
+			\step[fieldset=keywords, fieldvalue={,TextDigital}, append]
+		}
+	\map[overwrite]{
+			\perdatasource{../bib/SIG.bib}
+			\step[fieldset=keywords, fieldvalue={,SIG}, append]
+		}
+	\map[overwrite]{
+			\perdatasource{../bib/IDandine.bib}
+			\step[fieldset=keywords, fieldvalue={,ID}, append]
+		}
+	\map[overwrite]{
+			\perdatasource{../bib/computervision.bib}
+			\step[fieldset=keywords, fieldvalue={,CV}, append]
+		}
+	}
+}
+
+%Run XeLaTeX puis BibTeX puis 2 fois XeLaTeX
+
+\begin{document}
+\frontmatter
+
+\begin{titlepage}
+\begin{center}
+
+\bigskip
+
+\begin{large}
+UNIVERSITÉ PARIS, SCIENCES \& LETTRES
+\end{large}
+\begin{center}\rule{2cm}{0.02cm}\end{center}
+
+\bigskip
+\bigskip
+\bigskip
+
+\begin{Large}
+\textbf{Lise Bernard}\\
+\end{Large}
+\begin{normalsize} \textit{licencié ès lettres}\\
+\textit{Diplômée de Master en anthropologie de l'Amérique latine}\\
+\end{normalsize}
+
+\bigskip
+\bigskip
+\bigskip
+
+\begin{Huge}
+\textbf{Dynamiques de transmission des techniques et des iconographies dans les textiles andins sur la longue durée}\\
+\end{Huge}
+\bigskip
+\bigskip
+\bigskip
+
+\bigskip
+\bigskip
+\bigskip
+\begin{large}
+\end{large}
+\vfill
+
+\begin{large}
+Mémoire 
+pour le diplôme de master \\
+\og Humanités numériques et computationnelles \fg{} \\
+\bigskip
+2024
+\end{large}
+
+\end{center}
+\end{titlepage}
+
+\thispagestyle{empty}
+
+\cleardoublepage
+
+\section*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+
+\vspace{5pt}
+
+À partir d'un corpus de 696 pièces textiles, ce mémoire examine les mobilités et les imitations techniques et iconographiques dans les tissages andins. Ce travail met en parallèle une approche géographique des mobilités textiles, à partir des métadonnées géographiques dont nous disposons sur ces textiles, et une approche de vision par ordinateur, à partir des images des textiles. Le recours à ces outils numériques variés permet de comparer les échanges textiles avec les phénomènes de ré-interprétations techniques et iconographiques, dans une approche diachronique sur la longue durée depuis 1800 avant J.C. jusqu’à la période contemporaine.
+
+\medskip
+
+\textbf{Mots-clés:} Textile; Tissage; Andes; Pérou; Bolivie; Humanités Numériques; Système d'Informations Géographiques; Apprentissage Machine; Vision par ordinateur.
+
+\textbf{Informations bibliographiques:} Lise Bernard, \textit{Dynamiques de transmission des techniques et des iconographies dans les textiles andins sur la longue durée}, mémoire de master 2 \og Humanités numériques et computationnelles\fg{}, dir. Astrid Castres et Daniel Stockholm, Université Paris, Sciences \& Lettres, 2024.
+
+\vspace{5pt}
+
+\section*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+Based on a corpus of 696 textile pieces, this dissertation examines mobilities and technical and iconographic imitations in Andean weaving. This work combines a geographical approach to textile mobility, based on the geographic metadata we have on these textiles, and a computer vision approach, based on images of the textiles. The use of these varied digital tools makes it possible to compare textile exchanges with the phenomena of technical and iconographic re-interpretations, in a diachronic approach over the long term from 1800 BC to the contemporary period.
+
+\medskip
+
+\textbf{Keywords:} Textile; Weaving; Andes; Peru; Bolivia; Digital Humanities; Geographic Information System; Machine Learning; Computer Vision.
+
+\textbf{Bibliographic Information:} Lise Bernard, \textit{Dynamics of Transmission of Techniques and Iconographies in Andean Textiles over the long term}, M.A. thesis \og Digital and computational humanities\fg{}, dir. Astrid Castres and Daniel Stockholm, Université Paris, Sciences \& Lettres, 2024.
+
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+
+\section*{Remerciements}
+
+\epigraph{\textquotedblleft Antes de realizar investigaciones de campo, hay que tener en cuenta que los pasajes de esta categoría de viajes no incluyen automáticamente un boleto de vuelta con respeto a la dimensión psico-cultural.\textquotedblright}{E. Fischer, 2008, \textit{Urdiendo el tejido social: sociedad y producción textil en los Andes bolivianos}, p.~30-31.}
+
+\vspace{30pt}
+
+	Tout d'abord, je voudrais remercier mes deux directeurs de recherche. Mme Astrid Castres qui a pris le temps de se plonger dans les Humanités Numériques, et M. Daniel Stockholm pour son aide dans la découverte de l'analyse de l'image et son intérêt pour ce corpus de textiles andins.
+    
+\begin{center}
+   ***
+\end{center}
+
+	Je tiens aussi à remercier les professeurs de l'École Nationale des Chartes auprès desquels je me forme aux Humanités Numériques dans un cadre bienveillant et stimulant. Merci à tous ceux qui ont pris le temps de m'accompagner sur ce projet, et tout particulièrement à Mme Carmen Brando et M. Chahan Vidal-Gorène pour les nombreux échanges qui ont enrichi ce mémoire. Je suis également reconnaissante envers M. Lucas Terriel pour son aide sur le \textit{webscrapping} de la base de données. \\
+	
+	Un grand merci à Nicolas Goepfert et Romuald Housse, leurs regards d'archéologues m'ont guidée dans le dédale des chronologies et des zones géographiques des Andes. Et enfin, une pensée toute particulière pour Mme Sophie Desrosiers, qui m'a introduite à l'univers des textiles andins à la fois par l'ensemble merveilleux de ses travaux et par ses ateliers de tissage andin.
+
+\begin{center}
+   ***
+\end{center}
+
+Je suis également très reconnaissante envers mes camarades de classe, sans qui cette année n'aurait pas été la même. Merci aux ami\inclusives{e}, toutes les personnes qui ont rendu ces mois de travail ardu, plus légers. À ma famille, pour son soutien au quotidien et ce malgré la distance. Mélissa, dans celui-ci tu trouveras bien \og nonobstant \fg. Et évidemment à Alice, \textit{chica valiente}, dont la présence, même à des milliers de kilomètres, m'est indispensable.
+
+\begin{center}
+   ***
+\end{center}
+
+Enfin, ce mémoire est tout particulièrement dédié à tous les tisserands et toutes les tisserandes dont j'ai croisé le chemin dans les Andes et qui ont accepté de m'introduire à leurs savoir-faire.
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+
+% table des matières
+\renewcommand{\contentsname}{Sommaire}
+\tableofcontents
+\markboth{}{}{}
+
+\clearpage
+
+\mainmatter
+
+\input{glossaire.tex}
+\addcontentsline{toc}{chapter}{Glossaire}
+
+\input{introduction/introduction.tex}
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=17cm]{../images/pipelineM2.jpg}
+           	 \caption{Chaîne de traitement des données menée au cours du mémoire.}
+           	 \label{pipeline}
+	 \end{center}
+  \end{figure}
+
+\input{chap1.tex}
+\input{chap2.tex}
+\input{chap3.tex}
+
+
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
+
+À partir d'un corpus de 696 pièces textiles andines, nous nous sommes attelés dans ce mémoire à examiner les mobilités et les imitations techniques et iconographiques dans les Andes grâce aux outils numériques. Ce mémoire se fondait sur l'hypothèse de l'existence d'échanges de textiles dans la zone andine, accompagnés de phénomènes de ré-interprétations techniques et iconographiques. \\
+
+Dans la première partie, nous nous sommes appuyés sur la littérature des textiles andins afin de comprendre la diversité des objets sur lesquels nous travaillons. Puis nous avons présenté les différentes modalités de circulations dont nous avons connaissance, ainsi que les influences techniques et iconographiques présentes dans l'état de l'art. Ce travail de recension sur plusieurs millénaires nous a permis de présenter quelques cas d'étude de la base de données qui attestent des ces circulations et justifient le recours aux outils numériques afin d'élargir ces observations à l'ensemble des pièces textiles du corpus. %Concordance des temps ?
+
+Dans la seconde partie, nous sommes revenus sur les informations géographiques disponibles dans la base de données afin de les visualiser et d'en tirer des analyses. Ce travail a nécessité un lourd processus de pré-traitement des données, notamment lié à la complexité de la chronologie andine. L'analyse des métadonnées associées aux textiles était également l'occasion de comprendre les choix réalisés par les chercheurs et chercheuses à l'origine de la base de données. Ils se sont avérés déterminants pour notre traitement de données. Après avoir effectué ce travail critique et surpassé les écueils du géocodage, nous avons analysé les foyers de productions textiles dans une approche diachronique, confirmant la distinction entre textiles contemporains des hautes-terres et textiles archéologiques côtiers. Récupérer des informations géolocalisées nous a également permis de mettre en évidence certains parcours d'objets. En retraçant grossièrement ces potentiels trajets, nous avons attesté d'une intense circulation des textiles entre civilisations côtières et confirmé des trajets présents dans la littérature. 
+
+Au cours de la troisième et dernière partie, nous avons approfondi les influences entre les textiles à partir de leurs photographies. Dans un premier temps, nous avons appliqué une classification automatique des armures textiles, reposant sur leurs métadonnées. Nous avons prouvé que les réseaux de neurones convolutifs les plus récents sont en mesure de réaliser une classification probante des armures textiles andines, outil utile dans un cadre patrimonial. En outre, en adaptant cette même technique, nous avons montré que les méthodes de l'intelligence artificielle sont une piste convaincante pour trouver des ré-interprétations iconographiques dans les textiles. Grâce aux \textit{clustering} des \textit{features} d'images, nous avons distingué l'iconographie côtière de celle des hautes-terres mais également des cas d'imitations et de ré-interprétations iconographiques et techniques. L'iconographie des hautes-terres semble s'être largement répandue sur la côte, notamment à la période Intermédiaire Tardive au cours de laquelle on détecte à la fois des circulations et des imitations. Nous avons également relevé que les rares textiles coloniaux de la base de données s'inscrivent du côté des textiles républicains, sans héritage particulier des pratiques textiles pré-hispaniques. Ce chapitre ouvre la voie à un approfondissement de cette méthode pour saisir de manière plus systématiques les transferts de savoir-faire dans la zone andine. \\
+
+Ce mémoire dans son ensemble participe à la remise en question récente de l'immuabilité de l'~\og~andinité~\fg, encore très présente dans les études andinistes, à la fois en archéologie, en histoire et en anthropologie. L'analyse de notre base de données illustre en effet la variété des pratiques textiles dans les Andes et les multiples iconographies présentes sur le territoire au cours du temps. Ainsi, les civilisations citées par Ciriaco lors de notre entretien donnent à voir l'héritage complexe des artisan\inclusives{ne} contemporain\inclusives{ne} des Andes. 
+
+Ce mémoire s'inscrit également dans la continuité des études numériques du patrimoine textile. Comme le souligne Jorge Sebastián Lozano et son équipe, \og le patrimoine textile est un des nombreux \textquotedblleft parents pauvres\textquotedblright \:dans la grande famille du patrimoine culturel \fg\footcite[p.~76]{sebastianlozanoCatalogosMuseoGran2020}, notamment par sa faible numérisation, et mériterait d'être plus systématique analysé. Notre travail illustre cette nécessité de numérisation des collections textiles puisque nous détenons des outils qui bénéficient de l'accès à des pièces textiles appartenant à des collections muséales situées à des milliers de kilomètres. Néanmoins, ce travail de numérisation doit s'accompagner d'une bonne qualité d'image, ce qui n'était pas le cas pour tous les textiles de la base de données et a compliqué la tâche de vérification des techniques, notamment des relevés textiles.\\
+
+D'autres limites sont apparues au fil de cette étude, à la hauteur de la complexité de notre objet : 
+\begin{itemize}
+	\item Du point de vue du traitement géographique, nous aurions pu explorer les autres données qualitatives présentes dans la base de données sous forme de cartographies thématiques. Ainsi, il aurait pu être intéressant de cartographier les matériaux composant les textiles, puisque nous savons qu'ils sont une des traces des circulations entre hautes-terres et côte. 
+	\item La détection des techniques mériterait également d'être approfondie. Il serait intéressant de tester ces méthodes sur un corpus élargi, pour tester sa robustesse. En outre, un travail de meilleure compréhension du processus interne des algorithmes est nécessaire. Nous avons essayé de visualiser les différentes couches de \textit{features} du réseau afin de comprendre la manière dont se fait la classification mais les résultats n'étaient pas probants. Toutefois, cette perspective devrait être approfondie, notamment pour pallier le poids de la prise de vue dans la classification non-supervisée. Cet écueil pourrait également être surpassé en ayant recours à un pré-traitement des images pour ne fournir que des détails de textiles ou bien nous aurions pu tenter de classifier les textiles (et non pas les images) en fournissant des \textit{batchs} d'images, c'est-à-dire plusieurs images par textile.
+\end{itemize}
+
+Néanmoins, les résultats obtenus sont prometteurs et permettent de prolonger ce travail de compréhension des textiles andins et à travers eux de connaissance des populations qui les produisaient\footcite[p.~109]{conklinStructureMeaningAndean1997}. 
+
+
+%Critique : source pas forcément fiable (Victoria & Albert Museum pas fiable d'après Sophie Desrosiers) --> dépendant du travail muséal en amont = qualité des photos, fiabilité des analyses etc.
+%NB : un tel travail pourrait également être élargi à d'autres supports --> poterie ou architecture pour lesquels on a plus de cas (comme le fait Desrosiers \footcite[p.~7]{desrosiersHighlandComplementaryWarpWeaving2014} = transmédialité de l'art (Schultz)
+
+
+\listoffigures
+\listoftables
+
+\clearpage 
+
+\chapter*{Bibliographie}
+\addcontentsline{toc}{chapter}{Bibliographie}
+
+\printbibliography[heading=subbibintoc,keyword=ArchAnd,title=Archéologie andine]
+\printbibliography[heading=subbibintoc,keyword=classificationTextile,title=Théorie générale du textile]
+\printbibliography[heading=subbibintoc,keyword=TextAnd,title=Textiles Andins]
+\printbibliography[heading=subbibintoc,keyword=ID,title=Identité Andine]
+\printbibliography[heading=subbibintoc,keyword=TextDigital,title=Textiles et numérique]
+\printbibliography[heading=subbibintoc,keyword=SIG,title=Système d'Informations Géographiques]
+\printbibliography[heading=subbibintoc,keyword=CV,title=Vision par Ordinateur]
+
+
+\backmatter
+%% pour les glossaires
+%pour avoir une seule liste, on enlève l'option acronym au niveau du chargement du paquet
+%\printglossaries
+%\printglossary[title=Lexique] PAS FONCTIONNEL
+
+
+
+\appendix
+\renewcommand{\appendixpagename}{Annexes}
+\renewcommand{\appendixtocname}{Annexes}
+\addappheadtotoc
+\appendixpage
+
+\section[Photographies textiles]{Photographies de textiles de la base de données}
+
+\begin{figure}[!h]
+    \begin{minipage}[c]{.5\linewidth}
+            \begin{center}
+                \includegraphics[height=6cm,angle=-90]{../images/BML049_avant.jpg}
+            \end{center}
+    \end{minipage}
+        \begin{minipage}[c]{.5\linewidth}
+        \begin{center}
+        		\includegraphics[height=6cm,angle=-90]{../images/BML049_arriere.jpg}
+	\end{center}
+    \end{minipage}
+    \caption{Endroit et envers d'une bande en tapisserie avec trames supplémentaires qui imite l'organisation d'un tissage à dominante chaîne. Intermédiaire Tardif, côte centrale péruvienne. \\ Référence dans la base données : BML049.}
+    \label{fig:BML049}   
+\end{figure}
+
+\begin{figure}[!h]
+    \begin{minipage}[c]{.5\linewidth}
+     \begin{center}
+        		\includegraphics[height=6cm, angle=-90]{../images/BML109.jpg}
+	\end{center}
+	\label{fig:BML109}  
+	\caption{Textile qui alterne toile en coton marron et bande de tapisserie avec trames supplémentaires qui imite l'organisation d'un tissage à dominante chaîne. Intermédiaire Tardif, côte centrale péruvienne. \\ Référence dans la base données : BML109.}
+    \end{minipage}
+    \hspace{5pt}
+    \begin{minipage}[c]{.5\linewidth}
+         \begin{center}
+                \includegraphics[height=8cm]{../images/BML111.jpg}
+            \end{center}
+             \label{fig:BML111}  
+             \caption{Endroit d'un fragment de tissu en tapisserie avec trames supplémentaires qui imite l'organisation d'un tissage à dominante chaîne. Intermédiaire Tardif, côte centrale péruvienne (Chancay).\\ Référence dans la base données : BML111.}
+    \end{minipage}
+\end{figure}
+
+\clearpage
+
+\section[Graphiques]{Tableaux et graphiques de la répartition des données dans la base de données}
+
+\begin{figure}[!h]
+        \begin{center}
+        		\includegraphics[width=12cm]{../images/count_composition.png}
+	\end{center}
+    \caption{Décompte des valeurs prises par la catégorie \og composition \fg}     
+    \label{fig:composition}
+\end{figure}
+
+
+\begin{figure}[!h]
+        \begin{center}
+        		\includegraphics[width=12cm]{../images/count_structure.png}
+	\end{center}
+    \caption{Décompte des valeurs prises par la catégorie \og structure\fg}     
+    \label{fig:structure}
+\end{figure}
+
+\begin{figure}[!h]
+        \begin{center}
+        		\includegraphics[width=11cm]{../images/count_component.png}
+	\end{center}
+    \caption{Décompte des valeurs prises par la catégorie \og component\fg}     
+    \label{fig:component}
+\end{figure}
+
+\begin{figure}[!h]
+        \begin{center}
+        		\includegraphics[height=9cm, angle=-90]{../images/R_repository_find_site.png}
+	\end{center}
+    \caption{Répartition des valeurs prises par les catégories \og repository \fg \:et \og find site \fg.}     
+    \label{fig:repository_find_site}
+\end{figure}
+
+\begin{figure}[!h]
+        \begin{center}
+        		\includegraphics[height=10cm, angle=-90]{../images/R_repository_production_site.png}
+	\end{center}
+    \caption{Répartition des valeurs prises par les catégories \og repository \fg \:et \og production site \fg.}     
+    \label{fig:repository_production_site}
+\end{figure}
+
+\end{document}
+
+%En annexe, frise chronologique avec les cultures mentionnées en plus des périodes ? 
+%Reprendre script rescale image --> erreur de redimensionnement ? (tout en 100 par 150 au lieu de 100 un côté et l'autre côté proportionnel)
+%Carte de densité interactive --> enlever alinéa avant le titre "nombre de textile provenant de ce lieu"
+

@@ -1,0 +1,5 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'ArchAnd.blg'
+[68] biber-darwin:340> INFO - === Tue Jan 23, 2024, 19:48:19
+[225] Utils.pm:409> ERROR - Cannot find 'ArchAnd.bcf'!
+[225] Biber.pm:135> INFO - ERRORS: 1
