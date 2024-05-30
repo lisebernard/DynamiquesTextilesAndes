@@ -5,7 +5,8 @@ GitHub contenant les données, scripts, notebooks et le rapport associés au mé
 
 
 <p align="center">
-  <img src="">
+  <img src="rapport/images/BML032.jpg">
+  <img src="rapport/images/YOLO_NS_KMEAN.png">
 </p>
 
 # __Pipeline du projet__
@@ -13,7 +14,7 @@ GitHub contenant les données, scripts, notebooks et le rapport associés au mé
 Chaîne de traitement (ou _pipeline_) implémentée au cours du mémoire.
 
 <p align="center">
-  <img src="">
+  <img src="rapport/images/pipelineM2.jpg">
 </p>
 
 # __Résumé__
@@ -27,12 +28,18 @@ Chaîne de traitement (ou _pipeline_) implémentée au cours du mémoire.
 
 | Nom du dossier | Description |
 | ----------- |  ---- |
+| `data` | |
+| `rapport` | |
+| `scripts ` | |
 | ` ` | |
 | ` ` | |
 | ` ` | |
 | ` ` | |
 | ` ` | |
 | ` ` | |
-| ` ` | |
-| ` ` | |
-| ` ` | |
+
+### Gestion des environnements : 
+L'ensemble des librairies nécessaires aux notebook sont indiqués dans le documents `requirements.txt`, exceptés deux scripts de _computer vision_ : 
+- `classification_non_supervisee_VGG16.ipynb` nécessite les librairies indiquées dans `requirements_VGG16.txt`
+- `classification_non_supervisee_YOLO.ipynb` et `classification_supervisee_YOLO.ipynb` nécessite les librairies indiquées dans `requirements_YOLO.txt`
+Ces deux derniers ont été développés en local, sur un MacBook Pro M2 (Metal).
