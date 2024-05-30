@@ -3,10 +3,8 @@
 
 GitHub contenant les données, scripts, notebooks et le rapport associés au mémoire : Lise Bernard, _Dynamiques de transmission des techniques et des iconographies dans les textiles andins sur la longue durée_, mémoire de master 2 « Humanités numériques et computationnelles », dir. Astrid Castres et Daniel Stockholm, Université Paris, Sciences & Lettres, 2024.
 
-
 <p align="center">
-  <img src="rapport/images/BML032.jpg">
-  <img src="rapport/images/YOLO_NS_KMEAN.png">
+  <img src="rapport/images/bande.jpg">
 </p>
 
 # __Pipeline du projet__
