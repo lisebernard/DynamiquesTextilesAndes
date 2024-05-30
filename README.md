@@ -19,8 +19,6 @@ Chaîne de traitement (ou _pipeline_) implémentée au cours du mémoire.
 
 À partir d’un corpus de 696 pièces textiles, extraite de la base de données [_Weaving Comunities of Practice_](http://weavingcommunities.org/) (CILAVS, ILCA), ce mémoire examine les mobilités et les imitations techniques et iconographiques dans les tissages andins. Ce travail met en parallèle une approche géographique des mobilités textiles, à partir des métadonnées géographiques dont nous disposons sur ces textiles, et une approche de vision par ordinateur, à partir des images des textiles. Le recours à ces outils numériques variés permet de comparer les échanges textiles avec les phénomènes de ré-interprétations techniques et iconographiques, dans une approche diachronique sur la longue durée depuis 1800 avant J.C. jusquà la période contemporaine.
 
-### Noms et contenus des dossiers
-
 # Contenu du dépôt
 - `requirements.txt` : librairies nécessaire au fonctionnement des scripts.
 - `data/` : 
