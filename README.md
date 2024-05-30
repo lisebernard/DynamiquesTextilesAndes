@@ -17,21 +17,19 @@ Chaîne de traitement (ou _pipeline_) implémentée au cours du mémoire.
 
 # __Résumé__
 
-À partir d’un corpus de 696 pièces textiles, ce mémoire examine les mobilités et les imitations tech- niques et iconographiques dans les tissages andins. Ce travail met en parallèle une approche géographique des mobilités textiles, à partir des métadonnées géographiques dont nous disposons sur ces textiles, et une approche de vision par ordinateur, à partir des images des textiles. Le recours à ces outils numériques variés permet de comparer les échanges textiles avec les phénomènes de ré-interprétations techniques et iconographiques, dans une approche diachronique sur la longue durée depuis 1800 avant J.C. jusquà la période contemporaine.
-
-
-## __Navigation au sein du répertoire__
+À partir d’un corpus de 696 pièces textiles, extraite de la base de données [_Weaving Comunities of Practice_](http://weavingcommunities.org/) (CILAVS, ILCA), ce mémoire examine les mobilités et les imitations techniques et iconographiques dans les tissages andins. Ce travail met en parallèle une approche géographique des mobilités textiles, à partir des métadonnées géographiques dont nous disposons sur ces textiles, et une approche de vision par ordinateur, à partir des images des textiles. Le recours à ces outils numériques variés permet de comparer les échanges textiles avec les phénomènes de ré-interprétations techniques et iconographiques, dans une approche diachronique sur la longue durée depuis 1800 avant J.C. jusquà la période contemporaine.
 
 ### Noms et contenus des dossiers
 
 # Contenu du dépôt
+- `requirements.txt` : librairies nécessaire au fonctionnement des scripts.
 - `data/` : 
   - `textile.csv` : document source principal et sa version nettoyée  `textile_clean.csv`.
   - `gdf_find.csv`et `gdf_find.csv` sont des tableaux contenant les informations géographiques des textiles.
   - `geo_data/`: dossier contenant les données QGIS
   - `runs/`: dossier contenant les résultats des entraînements YOLO
-  - `images/` : images extraites de la base de données _Weaving Comunities of Practice.
-  - `dataset_technique/` : dossier contenant les images pour la validation extérieur, aussi récipendiaire de la préparation du dataset pour la classification supervisée.
+  - `images/` : images extraites de la base de données _Weaving Comunities of Practice_.
+  - `dataset_technique/` : dossier contenant les images pour la validation extérieure, aussi récipendiaire de la préparation du dataset pour la classification supervisée.
 - `rapport/` : 
   - `rendu.pdf`: mémoire
   - `bib/`: dossier contenant les documents bibliographiques.
@@ -46,7 +44,6 @@ Chaîne de traitement (ou _pipeline_) implémentée au cours du mémoire.
     - Script de classification supervisée des images.
     - Scripts de classification non-supervisée des images.
     - Script pour l'augmentation des données.
-- `requirements.txt` : librairies nécessaire au fonctionnement des scripts.
 
 
 
