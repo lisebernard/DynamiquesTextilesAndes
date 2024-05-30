@@ -1,0 +1,38 @@
+
+# _Dynamiques de transmission des techniques et des iconographies dans les textiles andins sur la longue durée_
+
+GitHub contenant les données, scripts, notebooks et le rapport associés au mémoire : Lise Bernard, _Dynamiques de transmission des techniques et des iconographies dans les textiles andins sur la longue durée_, mémoire de master 2 « Humanités numériques et computationnelles », dir. Astrid Castres et Daniel Stockholm, Université Paris, Sciences & Lettres, 2024.
+
+
+<p align="center">
+  <img src="">
+</p>
+
+# __Pipeline du projet__
+
+Chaîne de traitement (ou _pipeline_) implémentée au cours du mémoire.
+
+<p align="center">
+  <img src="">
+</p>
+
+# __Résumé__
+
+À partir d’un corpus de 696 pièces textiles, ce mémoire examine les mobilités et les imitations tech- niques et iconographiques dans les tissages andins. Ce travail met en parallèle une approche géographique des mobilités textiles, à partir des métadonnées géographiques dont nous disposons sur ces textiles, et une approche de vision par ordinateur, à partir des images des textiles. Le recours à ces outils numériques variés permet de comparer les échanges textiles avec les phénomènes de ré-interprétations techniques et iconographiques, dans une approche diachronique sur la longue durée depuis 1800 avant J.C. jusquà la période contemporaine.
+
+
+## __Navigation au sein du répertoire__
+
+### Noms et contenus des dossiers
+
+| Nom du dossier | Description |
+| ----------- |  ---- |
+| ` ` | |
+| ` ` | |
+| ` ` | |
+| ` ` | |
+| ` ` | |
+| ` ` | |
+| ` ` | |
+| ` ` | |
+| ` ` | |
