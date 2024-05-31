@@ -1,0 +1,404 @@
+\documentclass[a4paper, twoside]{book}
+
+\usepackage[spanish, english, french]{babel} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{times}
+
+%Configuration de la mise en page
+%Menus des annexes
+\usepackage{appendix}
+
+%Gestion des images
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\addto\captionsfrench{\def\figurename{Image}}
+\addto\captionsfrench{\def\tablename{Tableau}}
+
+%Modifier taille légende des images
+\usepackage[font=small]{caption}
+
+%Note de bas de page
+\counterwithout*{footnote}{chapter}
+
+% Éléments de mise en page (marge de 2,5 cm, alinéa en début de paragraphe 1cm, interligne 1,5)
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{1cm}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+%Colonnes
+\usepackage{paracol}
+
+%%barrer du texte
+\usepackage{soul}
+
+%TABLEAU
+\usepackage{longtable}
+%pour mode paysage
+\usepackage{lscape}
+%Pour paysage dans le pdf
+\usepackage{pdflscape}
+%Utiliser couleurs dans un tableau
+\usepackage{colortbl}
+%gestion avancée des couleurs. On met nom de la couleur puis pourcentage
+\usepackage{xcolor}
+%Séparer une cellule en 2
+\usepackage{diagbox}
+
+\usepackage{epigraph}
+
+%Pour avoir liens dans document (externes ou internes)
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Lise Bernard},pdftitle={memoire_M2}, pdfborder=0 0 0}
+
+%après hyperref : le paquet de glossaire PAS FONCTIONNEL
+%\usepackage[automake,toc]{glossaries}
+%\makeglossaries
+
+%\newglossaryentry{broderie}{name=Broderie, description={technique d'ornementation qui consiste à ajouter à la surface d'un support un décor généralement exécuté à l'aiguille avec des fils et divers éléments.}}
+
+
+%% Commande écriture inclusive
+\newcommand{\inclusive}[1]{$\cdot${#1}}
+\newcommand{\inclusives}[1]{$\cdot${#1}$\cdot${s}}
+
+%commande siècle
+\newcommand{\siecle}[1]{\textsc{#1}\textsuperscript{e} siècle}
+
+%Commande pour vider le titre courant et pagination des pages vides (l'insérer sur page que l'on veut vider)
+\newcommand{\clearemptydoublepage}{
+	\newpage{\pagestyle{empty}\cleardoublepage}}
+	
+%Commande pour les citations de + de 3 lignes
+\newenvironment{citer}{\quote\singlespacing\small\vspace{-6pt}}
+{\endquote\doublespacing}
+
+% Listes
+\usepackage{enumerate}
+\usepackage{enumitem}
+
+%%Bibliographie
+%TeXShop → Réglages → Éditeur → Complétions de BibDesk
+% Pour avoir guillemets français dans biblio
+\usepackage[babel]{csquotes} 
+%paquet gestion biblio
+\usepackage[backend=biber, isbn=false, doi=false, url=false]{biblatex-chicago}
+
+
+\addbibresource{../bib/TextAndes.bib}
+\addbibresource{../bib/ArchAnd.bib}
+\addbibresource{../bib/projetText.bib}
+\addbibresource{../bib/classificationTextile.bib}
+\addbibresource{../bib/TextDigital.bib}
+\addbibresource{../bib/SIG.bib}
+\addbibresource{../bib/IDandine.bib}
+\addbibresource{../bib/computervision.bib}
+
+\DeclareSourcemap{
+	\maps[datatype=bibtex]{
+		\map[overwrite]{
+			\perdatasource{../bib/TextAndes.bib}
+			\step[fieldset=keywords, fieldvalue={,TextAnd}, append]
+		}
+	 \map[overwrite]{
+			\perdatasource{../bib/ArchAnd.bib}
+			\step[fieldset=keywords, fieldvalue={ArchAnd,}, append]
+		}
+        \map[overwrite]{
+			\perdatasource{../bib/projetText.bib}
+			\step[fieldset=keywords, fieldvalue={,projetText}, append]
+		}
+	\map[overwrite]{
+			\perdatasource{../bib/classificationTextile.bib}
+			\step[fieldset=keywords, fieldvalue={,classificationTextile}, append]
+		}
+	\map[overwrite]{
+			\perdatasource{../bib/TextDigital.bib}
+			\step[fieldset=keywords, fieldvalue={,TextDigital}, append]
+		}
+	\map[overwrite]{
+			\perdatasource{../bib/SIG.bib}
+			\step[fieldset=keywords, fieldvalue={,SIG}, append]
+		}
+	\map[overwrite]{
+			\perdatasource{../bib/IDandine.bib}
+			\step[fieldset=keywords, fieldvalue={,ID}, append]
+		}
+	\map[overwrite]{
+			\perdatasource{../bib/computervision.bib}
+			\step[fieldset=keywords, fieldvalue={,CV}, append]
+		}
+	}
+}
+
+%Run XeLaTeX puis BibTeX puis 2 fois XeLaTeX
+
+\begin{document}
+\frontmatter
+
+\begin{titlepage}
+\begin{center}
+
+\bigskip
+
+\begin{large}
+UNIVERSITÉ PARIS, SCIENCES \& LETTRES
+\end{large}
+\begin{center}\rule{2cm}{0.02cm}\end{center}
+
+\bigskip
+\bigskip
+\bigskip
+
+\begin{Large}
+\textbf{Lise Bernard}\\
+\end{Large}
+\begin{normalsize} \textit{Licenciée ès lettres}\\
+\textit{Diplômée de Master en anthropologie de l'Amérique latine}\\
+\end{normalsize}
+
+\bigskip
+\bigskip
+\bigskip
+
+\begin{Huge}
+\textbf{Dynamiques de transmission des techniques et des iconographies dans les textiles andins sur la longue durée}\\
+\end{Huge}
+\bigskip
+\bigskip
+\bigskip
+
+\bigskip
+\bigskip
+\bigskip
+\begin{large}
+\end{large}
+\vfill
+
+\begin{large}
+Mémoire 
+pour le diplôme de master \\
+\og Humanités numériques et computationnelles \fg{} \\
+\bigskip
+2024
+\end{large}
+
+\end{center}
+\end{titlepage}
+
+\thispagestyle{empty}
+
+\cleardoublepage
+
+\section*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+
+\vspace{5pt}
+
+À partir d'un corpus de 696 pièces textiles, ce mémoire examine les mobilités et les imitations techniques et iconographiques dans les tissages andins. Ce travail met en parallèle une approche géographique des mobilités textiles, à partir des métadonnées dont nous disposons sur ces textiles, et une approche de vision par ordinateur, à partir des images des textiles. Le recours à ces outils numériques variés permet de comparer les échanges textiles avec les phénomènes de ré-interprétations techniques et iconographiques, dans une approche diachronique sur la longue durée depuis 1800 avant J.C. jusqu’à la période contemporaine.
+
+\medskip
+
+\textbf{Mots-clés:} Textile; Tissage; Andes; Pérou; Bolivie; Humanités Numériques; Système d'Informations Géographiques; Apprentissage Machine; Vision par ordinateur.
+
+\textbf{Informations bibliographiques:} Lise Bernard, \textit{Dynamiques de transmission des techniques et des iconographies dans les textiles andins sur la longue durée}, mémoire de master 2 \og Humanités numériques et computationnelles\fg{}, dir. Astrid Castres et Daniel Stockholm, Université Paris, Sciences \& Lettres, 2024.
+
+\vspace{5pt}
+
+\section*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+Based on a corpus of 696 textile pieces, this dissertation examines mobilities and technical and iconographic imitations in Andean weaving. This work combines a geographical approach to textile mobility, based on the geographic metadata we have on these textiles, and a computer vision approach, based on images of the textiles. The use of these varied digital tools makes it possible to compare textile exchanges with the phenomena of technical and iconographic re-interpretations, in a diachronic approach over the long term from 1800 BC to the contemporary period.
+
+\medskip
+
+\textbf{Keywords:} Textile; Weaving; Andes; Peru; Bolivia; Digital Humanities; Geographic Information System; Machine Learning; Computer Vision.
+
+\textbf{Bibliographic Information:} Lise Bernard, \textit{Dynamics of Transmission of Techniques and Iconographies in Andean Textiles over the long term}, M.A. thesis \og Digital and computational humanities\fg{}, dir. Astrid Castres and Daniel Stockholm, Université Paris, Sciences \& Lettres, 2024.
+
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+
+\section*{Remerciements}
+
+\epigraph{\textquotedblleft Antes de realizar investigaciones de campo, hay que tener en cuenta que los pasajes de esta categoría de viajes no incluyen automáticamente un boleto de vuelta con respeto a la dimensión psico-cultural.\textquotedblright}{E. Fischer, 2008, \textit{Urdiendo el tejido social: sociedad y producción textil en los Andes bolivianos}, p.~30-31.}
+
+\vspace{30pt}
+
+	Tout d'abord, je voudrais remercier mes deux directeurs de recherche. Mme Astrid Castres qui a pris le temps de se plonger dans les Humanités Numériques, et M. Daniel Stockholm pour son aide dans la découverte de l'analyse de l'image et son intérêt pour ce corpus de textiles andins.
+    
+\begin{center}
+   ***
+\end{center}
+
+	Je tiens aussi à remercier les professeurs de l'École Nationale des Chartes auprès desquels je me forme aux Humanités Numériques dans un cadre bienveillant et stimulant. Merci à tous ceux qui ont pris le temps de m'accompagner sur ce projet, et tout particulièrement à Mme Carmen Brando et M. Chahan Vidal-Gorène pour les nombreux échanges qui ont enrichi ce mémoire. Je suis également reconnaissante envers M. Lucas Terriel pour son aide sur le \textit{webscrapping} de la base de données. \\
+	
+	Un grand merci à Nicolas Goepfert et Romuald Housse, leurs regards d'archéologues m'ont guidée dans le dédale des chronologies et des zones géographiques des Andes. Et enfin, une pensée toute particulière pour Mme Sophie Desrosiers, qui m'a introduite à l'univers des textiles andins à la fois par l'ensemble merveilleux de ses travaux et par ses ateliers de tissage andin.
+
+\begin{center}
+   ***
+\end{center}
+
+Je suis également très reconnaissante envers mes camarades de classe, sans qui cette année n'aurait pas été la même. Merci aux ami\inclusives{e}, toutes les personnes qui ont rendu ces mois de travail ardu, plus légers. À ma famille, pour son soutien au quotidien et ce malgré la distance. Mélissa, dans celui-ci tu trouveras bien \og nonobstant \fg. Et évidemment à Alice, \textit{chica valiente}, dont la présence, même à des milliers de kilomètres, m'est indispensable.
+
+\begin{center}
+   ***
+\end{center}
+
+Enfin, ce mémoire est tout particulièrement dédié à tous les tisserands et toutes les tisserandes dont j'ai croisé le chemin dans les Andes et qui ont accepté de m'introduire à leurs savoir-faire.
+
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+
+% table des matières
+\renewcommand{\contentsname}{Sommaire}
+\tableofcontents
+\markboth{}{}{}
+
+\clearpage
+
+\mainmatter
+
+\input{glossaire.tex}
+\addcontentsline{toc}{chapter}{Glossaire}
+
+\input{introduction/introduction.tex}
+\clearpage
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=17cm]{../images/pipelineM2.jpg}
+           	 \caption{Chaîne de traitement des données menée au cours du mémoire.}
+           	 \label{pipeline}
+	 \end{center}
+  \end{figure}
+
+\vspace{10pt}
+
+\textbf{L'ensemble des codes associés au mémoire se trouve dans le répertoire GitHub suivant : \url{https://github.com/lisebernard/DynamiquesTextilesAndes}.}
+
+\input{chap1.tex}
+\input{chap2.tex}
+\input{chap3.tex}
+\input{conclusion.tex}
+
+\listoffigures
+\listoftables
+
+\clearpage 
+
+\chapter*{Bibliographie}
+\addcontentsline{toc}{chapter}{Bibliographie}
+
+\printbibliography[heading=subbibintoc,keyword=ArchAnd,title=Archéologie andine]
+\printbibliography[heading=subbibintoc,keyword=classificationTextile,title=Théorie générale du textile]
+\printbibliography[heading=subbibintoc,keyword=TextAnd,title=Textiles Andins]
+\printbibliography[heading=subbibintoc,keyword=ID,title=Identité Andine]
+\printbibliography[heading=subbibintoc,keyword=TextDigital,title=Textiles et numérique]
+\printbibliography[heading=subbibintoc,keyword=SIG,title=Système d'Informations Géographiques]
+\printbibliography[heading=subbibintoc,keyword=CV,title=Vision par Ordinateur]
+
+
+\backmatter
+%% pour les glossaires
+%pour avoir une seule liste, on enlève l'option acronym au niveau du chargement du paquet
+%\printglossaries
+%\printglossary[title=Lexique] PAS FONCTIONNEL
+
+
+
+\appendix
+\renewcommand{\appendixpagename}{Annexes}
+\renewcommand{\appendixtocname}{Annexes}
+\addappheadtotoc
+\appendixpage
+
+\section[Photographies textiles]{Photographies de textiles de la base de données}
+
+\begin{figure}[!h]
+    \begin{minipage}[c]{.5\linewidth}
+            \begin{center}
+                \includegraphics[height=6cm,angle=-90]{../images/BML049_avant.jpg}
+            \end{center}
+    \end{minipage}
+        \begin{minipage}[c]{.5\linewidth}
+        \begin{center}
+        		\includegraphics[height=6cm,angle=-90]{../images/BML049_arriere.jpg}
+	\end{center}
+    \end{minipage}
+    \caption{Endroit et envers d'une bande en tapisserie avec trames supplémentaires qui imite l'organisation d'un tissage à dominante chaîne. Intermédiaire Tardif, côte centrale péruvienne. \\ Référence dans la base données : BML049.}
+    \label{fig:BML049}   
+\end{figure}
+
+\begin{figure}[!h]
+    \begin{minipage}[c]{.5\linewidth}
+     \begin{center}
+        		\includegraphics[height=6cm, angle=-90]{../images/BML109.jpg}
+	\end{center}
+	\label{fig:BML109}  
+	\caption{Textile qui alterne toile en coton marron et bande de tapisserie avec trames supplémentaires qui imite l'organisation d'un tissage à dominante chaîne. Intermédiaire Tardif, côte centrale péruvienne. \\ Référence dans la base données : BML109.}
+    \end{minipage}
+    \hspace{5pt}
+    \begin{minipage}[c]{.5\linewidth}
+         \begin{center}
+                \includegraphics[height=8cm]{../images/BML111.jpg}
+            \end{center}
+             \label{fig:BML111}  
+             \caption{Endroit d'un fragment de tissu en tapisserie avec trames supplémentaires qui imite l'organisation d'un tissage à dominante chaîne. Intermédiaire Tardif, côte centrale péruvienne (Chancay).\\ Référence dans la base données : BML111.}
+    \end{minipage}
+\end{figure}
+
+\clearpage
+
+\section[Graphiques]{Tableaux et graphiques de la répartition des données dans la base de données}
+
+\begin{figure}[!h]
+        \begin{center}
+        		\includegraphics[width=12cm]{../images/count_composition.png}
+	\end{center}
+    \caption{Décompte des valeurs prises par la catégorie \og composition \fg}     
+    \label{fig:composition}
+\end{figure}
+
+
+\begin{figure}[!h]
+        \begin{center}
+        		\includegraphics[width=12cm]{../images/count_structure.png}
+	\end{center}
+    \caption{Décompte des valeurs prises par la catégorie \og structure\fg}     
+    \label{fig:structure}
+\end{figure}
+
+\begin{figure}[!h]
+        \begin{center}
+        		\includegraphics[width=11cm]{../images/count_component.png}
+	\end{center}
+    \caption{Décompte des valeurs prises par la catégorie \og component\fg}     
+    \label{fig:component}
+\end{figure}
+
+\begin{figure}[!h]
+        \begin{center}
+        		\includegraphics[height=9cm, angle=-90]{../images/R_repository_find_site.png}
+	\end{center}
+    \caption{Répartition des valeurs prises par les catégories \og repository \fg \:et \og find site \fg.}     
+    \label{fig:repository_find_site}
+\end{figure}
+
+\begin{figure}[!h]
+        \begin{center}
+        		\includegraphics[height=10cm, angle=-90]{../images/R_repository_production_site.png}
+	\end{center}
+    \caption{Répartition des valeurs prises par les catégories \og repository \fg \:et \og production site \fg.}     
+    \label{fig:repository_production_site}
+\end{figure}
+
+\end{document}
+
+%En annexe, frise chronologique avec les cultures mentionnées en plus des périodes ? 
+%Reprendre script rescale image --> erreur de redimensionnement ? (tout en 100 par 150 au lieu de 100 un côté et l'autre côté proportionnel)
+%Carte de densité interactive --> enlever alinéa avant le titre "nombre de textile provenant de ce lieu"
+
